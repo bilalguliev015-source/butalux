@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Butalux Reviews</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Manrope:wght@400;500;700&display=swap">
+<style>
+/* Layout: one narrow column, a night-water header band, three stacked review choices */
+:root {
+  --bg: #f3f4f7;
+  --surface: #ffffff;
+  --ink: #141a2b;
+  --muted: #5b6377;
+  --line: #dde0e8;
+  --night: #0f1a33;
+  --night-ink: #f1ead8;
+  --gold: #b88a2e;
+  --gold-soft: #e9d9b4;
+  --display: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  --body: "Manrope", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0b1222; --surface: #141d33; --ink: #ece7da; --muted: #a3a9b8; --line: #26304a;
+    --night: #070d1b; --night-ink: #f1ead8; --gold: #d8ad55; --gold-soft: #3a3220;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0b1222; --surface: #141d33; --ink: #ece7da; --muted: #a3a9b8; --line: #26304a;
+  --night: #070d1b; --night-ink: #f1ead8; --gold: #d8ad55; --gold-soft: #3a3220;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--ink); font-family: var(--body); font-size: 1rem; line-height: 1.5; }
+.hero {
+  background: var(--night);
+  color: var(--night-ink);
+  padding: 2.75rem 16px 3.5rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.hero::after {
+  content: "";
+  position: absolute; left: 0; right: 0; bottom: 0; height: 2.25rem;
+  background:
+    repeating-linear-gradient(90deg, transparent 0 14px, rgba(216,173,85,.35) 14px 30px, transparent 30px 52px) 0 0.4rem / 100% 2px no-repeat,
+    repeating-linear-gradient(90deg, transparent 0 30px, rgba(216,173,85,.22) 30px 44px, transparent 44px 70px) 0 1rem / 100% 2px no-repeat,
+    repeating-linear-gradient(90deg, transparent 0 8px, rgba(216,173,85,.14) 8px 18px, transparent 18px 40px) 0 1.6rem / 100% 2px no-repeat;
+}
+.eyebrow { font-size: .72rem; letter-spacing: .18em; text-transform: uppercase; color: var(--gold); font-weight: 700; margin: 0 0 .6rem; }
+h1 { font-family: var(--display); font-weight: 600; font-size: clamp(2.4rem, 9vw, 3.4rem); line-height: 1; margin: 0; letter-spacing: .01em; text-wrap: balance; }
+.sub { margin: .9rem auto 0; max-width: 28rem; font-size: 1rem; opacity: .85; text-wrap: balance; }
+main { max-width: 30rem; margin: 0 auto; padding-inline: 16px; padding-block: 2rem 2.5rem; display: grid; gap: 1.5rem; }
+.prompt { margin: 0; text-align: center; color: var(--muted); font-size: .95rem; }
+.choices { display: grid; gap: .85rem; }
+.choice {
+  display: grid; grid-template-columns: 3rem 1fr auto; align-items: center; gap: 1rem;
+  padding: 1rem 1.1rem; background: var(--surface); border: 1px solid var(--line); border-radius: 14px;
+  color: var(--ink); text-decoration: none; transition: border-color .15s, transform .15s;
+}
+.choice:hover { border-color: var(--gold); transform: translateY(-1px); }
+.choice:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
+.mark { width: 3rem; height: 3rem; border-radius: 50%; display: grid; place-items: center; background: var(--gold-soft); color: var(--gold); font-family: var(--display); font-weight: 600; font-size: 1.5rem; }
+.name { font-weight: 700; font-size: 1.05rem; display: block; }
+.note { color: var(--muted); font-size: .85rem; display: block; min-width: 0; }
+.text { min-width: 0; }
+.arrow { color: var(--gold); font-size: 1.3rem; }
+.langs { display: grid; gap: .3rem; text-align: center; color: var(--muted); font-size: .85rem; border-top: 1px solid var(--line); padding-top: 1.25rem; }
+.langs p { margin: 0; }
+footer { text-align: center; color: var(--muted); font-size: .8rem; padding-inline: 16px; padding-block: 0 2rem; }
+@media (prefers-reduced-motion: reduce) { .choice { transition: none; } .choice:hover { transform: none; } }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <p class="eyebrow">Bosphorus Luxury Cruise</p>
+  <h1>Butalux</h1>
+  <p class="sub">Thank you for sailing with us tonight. Tell us how your evening on the Bosphorus went.</p>
+</header>
+
+<main>
+  <p class="prompt">Choose where you'd like to leave your review</p>
+  <nav class="choices" aria-label="Review sites">
+    <a class="choice" href="https://maps.app.goo.gl/RafnMSkmdEcpYrDDA" target="_blank" rel="noopener">
+      <span class="mark" aria-hidden="true">G</span>
+      <span class="text"><span class="name">Google Maps</span><span class="note">Review with your Google account</span></span>
+      <span class="arrow" aria-hidden="true">→</span>
+    </a>
+    <a class="choice" href="https://www.viator.com/tours/Istanbul/Sultania-Luxury-Cruise-Dinner-on-the-Bosphorus/d585-5555826P1" target="_blank" rel="noopener">
+      <span class="mark" aria-hidden="true">T</span>
+      <span class="text"><span class="name">Tripadvisor</span><span class="note">Via Viator, for guests who booked there</span></span>
+      <span class="arrow" aria-hidden="true">→</span>
+    </a>
+    <a class="choice" href="https://yandex.com.tr/maps/org/butalux_bosphorus_luxury_cruise/109098239139/reviews/?add-review=true" target="_blank" rel="noopener">
+      <span class="mark" aria-hidden="true">Я</span>
+      <span class="text"><span class="name">Yandex Maps</span><span class="note">Review with your Yandex account</span></span>
+      <span class="arrow" aria-hidden="true">→</span>
+    </a>
+  </nav>
+  <div class="langs">
+    <p>Yorumunuzu bırakmak istediğiniz siteyi seçin</p>
+    <p>Выберите, где оставить отзыв</p>
+  </div>
+</main>
+
+<footer>Butalux · Ömer Avni, Beyoğlu, İstanbul</footer>
+</body>
+</html>
