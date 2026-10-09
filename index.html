@@ -70,6 +70,10 @@ main { max-width: 30rem; margin: 0 auto; padding-inline: 16px; padding-block: 2r
 .note { color: var(--muted); font-size: .85rem; display: block; min-width: 0; }
 .text { min-width: 0; }
 .arrow { color: var(--gold); font-size: 1.3rem; }
+.choice.featured { border: 2px solid var(--gold); padding-block: 1.25rem; }
+.choice.featured .mark { background: var(--gold); color: var(--surface); }
+.choice.featured .name { font-size: 1.2rem; }
+.or { margin: .4rem 0 0; text-align: center; color: var(--muted); font-size: .85rem; }
 .langs { display: grid; gap: .3rem; text-align: center; color: var(--muted); font-size: .85rem; border-top: 1px solid var(--line); padding-top: 1.25rem; }
 .langs p { margin: 0; }
 footer { text-align: center; color: var(--muted); font-size: .8rem; padding-inline: 16px; padding-block: 0 2rem; }
@@ -87,14 +91,15 @@ footer { text-align: center; color: var(--muted); font-size: .8rem; padding-inli
 <main>
   <p class="prompt">Choose where you'd like to leave your review</p>
   <nav class="choices" aria-label="Review sites">
+    <a class="choice featured" href="https://www.viator.com/tours/Istanbul/Sultania-Luxury-Cruise-Dinner-on-the-Bosphorus/d585-5555826P1" target="_blank" rel="noopener">
+      <span class="mark" aria-hidden="true">T</span>
+      <span class="text"><span class="name">Tripadvisor</span><span class="note">Have a Tripadvisor account? Please start here</span></span>
+      <span class="arrow" aria-hidden="true">→</span>
+    </a>
+    <p class="or">No Tripadvisor account? Use Google or Yandex</p>
     <a class="choice" href="https://maps.app.goo.gl/RafnMSkmdEcpYrDDA" target="_blank" rel="noopener">
       <span class="mark" aria-hidden="true">G</span>
       <span class="text"><span class="name">Google Maps</span><span class="note">Review with your Google account</span></span>
-      <span class="arrow" aria-hidden="true">→</span>
-    </a>
-    <a class="choice" href="https://www.viator.com/tours/Istanbul/Sultania-Luxury-Cruise-Dinner-on-the-Bosphorus/d585-5555826P1" target="_blank" rel="noopener">
-      <span class="mark" aria-hidden="true">T</span>
-      <span class="text"><span class="name">Tripadvisor</span><span class="note">Via Viator, for guests who booked there</span></span>
       <span class="arrow" aria-hidden="true">→</span>
     </a>
     <a class="choice" href="https://yandex.com.tr/maps/org/butalux_bosphorus_luxury_cruise/109098239139/reviews/?add-review=true" target="_blank" rel="noopener">
